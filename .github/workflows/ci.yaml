@@ -11,6 +11,11 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+
+    default:
+      run: 
+        working-directory: ./aws-cdk-lab
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
