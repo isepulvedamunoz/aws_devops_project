@@ -1,10 +1,14 @@
-import * as cdk from 'aws-cdk-lib/core';
+
+import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { DataLakeConstruct } from './constructs/data-lake';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-export class AwsCdkLabStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class AwsCdkLabStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+
+    new DataLakeConstruct(this, 'DataLakeConstruct');
 
     // The code that defines your stack goes here
 
